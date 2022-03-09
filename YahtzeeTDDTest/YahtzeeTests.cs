@@ -8,32 +8,22 @@ namespace YahtzeeTDDTest
     public class YahtzeeTests
     {
         [Theory]
-        [InlineData(new[] { 1, 1, 1, 1, 1 }, 5)]
-        [InlineData(new[] { 1, 1, 1, 1, 2 }, 4)]
-        [InlineData(new[] { 2, 2, 2, 2, 2 }, 0)]
+        [InlineData(new[] { 1, 1, 1, 1, 1 }, 1, 5)]
+        [InlineData(new[] { 1, 1, 1, 1, 2 }, 1, 4)]
+        [InlineData(new[] { 2, 2, 2, 2, 2 }, 1, 0)]
+        [InlineData(new[] { 2, 2, 2, 2, 2 }, 2, 10)]
+        [InlineData(new[] { 1, 1, 1, 1, 2 }, 2, 2)]
+        [InlineData(new[] { 2, 2, 2, 2, 1 }, 2, 8)]
 
-        public void TestOnes(int[] dice, int expectedResult)
+        public void SameNumberCombinations_ReturnSumOfSaidNumber(int[] dice, int number, int expectedResult)
         {
             //Arrange
             PointsCalculator pointsCalculator = new PointsCalculator();
             //Act
-            int result = pointsCalculator.GetOnes(dice);
+            int result = pointsCalculator.GetNumbers(dice,number);
             //Assert
             Assert.Equal(expectedResult,result);
         }
 
-        [Theory]
-        [InlineData(new[] { 2, 2, 2, 2, 2 }, 10)]
-        [InlineData(new[] { 2, 2, 2, 2, 3 }, 8)]
-        [InlineData(new[] { 1, 1, 1, 1, 1}, 0)]
-        public void TestTwos(int[] dice, int expectedResult)
-        {
-            //Arrange
-            PointsCalculator pointsCalculator = new PointsCalculator();
-            //Act
-            int result = pointsCalculator.GetTwos(dice);
-            //Assert
-            Assert.Equal(expectedResult, result);
-        }
     }
 }

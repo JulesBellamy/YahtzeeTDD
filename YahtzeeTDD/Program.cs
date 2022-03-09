@@ -10,25 +10,16 @@ namespace YahtzeeTDD
             
         }
 
-        public int GetOnes(int[] dice)
+        public int GetNumbers(int[] dice, int number)
         {
             int res = 0;
             foreach(int die in dice)
             {
-                if(die == 1) res += die;
+                if(die == number) res += die;
             }
             return res;
         }
 
-        public int GetTwos(int[] dice)
-        {
-            int res = 0;
-            foreach (int die in dice)
-            {
-                if (die == 2) res += die;
-            }
-            return res;
-        }
     }
     class Program
     {
