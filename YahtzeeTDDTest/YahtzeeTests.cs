@@ -40,6 +40,19 @@ namespace YahtzeeTDDTest
             Assert.Equal(expectedResult, result);
         }
 
+        [Theory]
+        [InlineData(new[] { 1, 1, 1, 5, 3 }, 11)]
+        [InlineData(new[] { 3, 3, 6, 1, 3 }, 16)]
+        [InlineData(new[] { 3, 2, 6, 1, 3 }, 0)]
+        public void ThreeOfAKind_ReturnSumOfNumbers(int[] dice, int expectedResult)
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            //Act
+            int result = pointsCalculator.GetThreeOfAKind(dice);
+            //Assert
+            Assert.Equal(expectedResult, result);
+        }
 
     }
 }
