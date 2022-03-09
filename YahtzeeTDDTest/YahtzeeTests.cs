@@ -54,5 +54,18 @@ namespace YahtzeeTDDTest
             Assert.Equal(expectedResult, result);
         }
 
+        [Theory]
+        [InlineData(new[] { 1, 1, 1, 1, 3 }, 7)]
+        [InlineData(new[] { 1, 1, 1, 3, 2 }, 0)]
+        public void FourOfAKind_ReturnSumOfNumbers(int[] dice, int expectedResult)
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            //Act
+            int result = pointsCalculator.GetFourOfAKind(dice);
+            //Assert
+            Assert.Equal(expectedResult, result);
+        }
+
     }
 }

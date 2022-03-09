@@ -32,9 +32,32 @@ namespace YahtzeeTDD
 
         public int GetThreeOfAKind(int[] dice)
         {
-            throw new NotImplementedException();
+            Array.Sort(dice);
+            int current = 0;
+            int count = 0;
+            foreach (int die in dice)
+            {
+                if (current == die)
+                {
+                    count++;
+                    if (count >= 3)
+                    {
+                        return GetSum(dice);
+                    }
+                }
+                else
+                {
+                    current = die;
+                    count = 1;
+                }
+            }
+            return 0;
         }
 
+        public int GetFourOfAKind(int[] dice)
+        {
+            throw new NotImplementedException();
+        }
     }
     class Program
     {
