@@ -30,7 +30,8 @@ namespace YahtzeeTDD
             return res;
         }
 
-        public int GetThreeOfAKind(int[] dice)
+
+        public int GetMultipleOfAKind(int[] dice, int multiple)
         {
             Array.Sort(dice);
             int current = 0;
@@ -40,7 +41,7 @@ namespace YahtzeeTDD
                 if (current == die)
                 {
                     count++;
-                    if (count >= 3)
+                    if (count >= multiple)
                     {
                         return GetSum(dice);
                     }
@@ -52,11 +53,6 @@ namespace YahtzeeTDD
                 }
             }
             return 0;
-        }
-
-        public int GetFourOfAKind(int[] dice)
-        {
-            throw new NotImplementedException();
         }
     }
     class Program

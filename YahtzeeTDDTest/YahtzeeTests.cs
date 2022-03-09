@@ -49,7 +49,7 @@ namespace YahtzeeTDDTest
             //Arrange
             PointsCalculator pointsCalculator = new PointsCalculator();
             //Act
-            int result = pointsCalculator.GetThreeOfAKind(dice);
+            int result = pointsCalculator.GetMultipleOfAKind(dice,3);
             //Assert
             Assert.Equal(expectedResult, result);
         }
@@ -62,7 +62,7 @@ namespace YahtzeeTDDTest
             //Arrange
             PointsCalculator pointsCalculator = new PointsCalculator();
             //Act
-            int result = pointsCalculator.GetFourOfAKind(dice);
+            int result = pointsCalculator.GetMultipleOfAKind(dice,4);
             //Assert
             Assert.Equal(expectedResult, result);
         }
