@@ -13,11 +13,16 @@ namespace YahtzeeTDD
         public int GetNumbers(int[] dice, int number)
         {
             int res = 0;
-            foreach(int die in dice)
+            foreach (int die in dice)
             {
-                if(die == number) res += die;
+                if (die == number) res += die;
             }
             return res;
+        }
+
+        public int GetSum(int[] dice)
+        {
+            throw new NotImplementedException();
         }
 
     }

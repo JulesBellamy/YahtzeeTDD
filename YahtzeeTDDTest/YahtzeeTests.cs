@@ -14,7 +14,9 @@ namespace YahtzeeTDDTest
         [InlineData(new[] { 2, 2, 2, 2, 2 }, 2, 10)]
         [InlineData(new[] { 1, 1, 1, 1, 2 }, 2, 2)]
         [InlineData(new[] { 2, 2, 2, 2, 1 }, 2, 8)]
-
+        [InlineData(new[] { 3, 3, 3, 2, 1 }, 3, 9)]
+        [InlineData(new[] { 2, 4, 4, 2, 1 }, 4, 8)]
+        [InlineData(new[] { 6, 2, 6, 2, 6 }, 6, 18)]
         public void SameNumberCombinations_ReturnSumOfSaidNumber(int[] dice, int number, int expectedResult)
         {
             //Arrange
@@ -24,6 +26,20 @@ namespace YahtzeeTDDTest
             //Assert
             Assert.Equal(expectedResult,result);
         }
+
+        [Theory]
+        [InlineData(new[] { 1, 1, 1, 1, 1 }, 5)]
+        [InlineData(new[] { 1, 3, 6, 1, 2 }, 13)]
+        public void Chance_ReturnSumOfNumbers(int[] dice, int expectedResult)
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            //Act
+            int result = pointsCalculator.GetSum(dice);
+            //Assert
+            Assert.Equal(expectedResult, result);
+        }
+
 
     }
 }
