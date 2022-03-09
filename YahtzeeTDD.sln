@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahtzeeTDD", "YahtzeeTDD\YahtzeeTDD.csproj", "{F3659AD2-2BB6-487D-85DE-4C562FF8CCB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YahtzeeTDDTest", "YahtzeeTDDTest\YahtzeeTDDTest.csproj", "{B068DB19-BEDA-43E8-BD3B-0B6218197537}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3659AD2-2BB6-487D-85DE-4C562FF8CCB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3659AD2-2BB6-487D-85DE-4C562FF8CCB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3659AD2-2BB6-487D-85DE-4C562FF8CCB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3659AD2-2BB6-487D-85DE-4C562FF8CCB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B068DB19-BEDA-43E8-BD3B-0B6218197537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B068DB19-BEDA-43E8-BD3B-0B6218197537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B068DB19-BEDA-43E8-BD3B-0B6218197537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B068DB19-BEDA-43E8-BD3B-0B6218197537}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EA4B3A2-E2D1-4BD6-AD36-C7379F5B48F6}
+	EndGlobalSection
+EndGlobal

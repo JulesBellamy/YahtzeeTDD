@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IwouWwoJUTia2YDmVnCPFa5LGbO72PX0znkt/rW//TFVbF/KJo04F34gXRr6kiWJ7UhKMMwhVpBFznUZr0Dibw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bella\\source\\repos\\YahtzeeTDD\\YahtzeeTDD\\YahtzeeTDD.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bella\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.18\\microsoft.netcore.app.host.win-x64.3.1.18.nupkg.sha512"
+  ],
+  "logs": []
+}
