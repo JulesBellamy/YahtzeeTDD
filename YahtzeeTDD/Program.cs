@@ -54,6 +54,11 @@ namespace YahtzeeTDD
             }
             return 0;
         }
+
+        public int Yahtzee(int[] dice)
+        {
+            throw new NotImplementedException();
+        }
     }
     class Program
     {

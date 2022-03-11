@@ -44,7 +44,7 @@ namespace YahtzeeTDDTest
         [InlineData(new[] { 1, 1, 1, 5, 3 }, 11)]
         [InlineData(new[] { 3, 3, 6, 1, 3 }, 16)]
         [InlineData(new[] { 3, 2, 6, 1, 3 }, 0)]
-        public void ThreeOfAKind_ReturnSumOfNumbers(int[] dice, int expectedResult)
+        public void ThreeOfAKind_ReturnSumOfNumbersOrZero(int[] dice, int expectedResult)
         {
             //Arrange
             PointsCalculator pointsCalculator = new PointsCalculator();
@@ -57,7 +57,7 @@ namespace YahtzeeTDDTest
         [Theory]
         [InlineData(new[] { 1, 1, 1, 1, 3 }, 7)]
         [InlineData(new[] { 1, 1, 1, 3, 2 }, 0)]
-        public void FourOfAKind_ReturnSumOfNumbers(int[] dice, int expectedResult)
+        public void FourOfAKind_ReturnSumOfNumbersOrZero(int[] dice, int expectedResult)
         {
             //Arrange
             PointsCalculator pointsCalculator = new PointsCalculator();
@@ -67,5 +67,16 @@ namespace YahtzeeTDDTest
             Assert.Equal(expectedResult, result);
         }
 
+        [Fact]
+        public void Yahtzee_Return100IfFiveSameDices()
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            int[] dice = { 4, 4, 4, 4, 4 };
+            //Act
+            int result = pointsCalculator.Yahtzee(dice);
+            //Assert
+            Assert.Equal(100, result);
+        }
     }
 }
