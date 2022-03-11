@@ -78,5 +78,17 @@ namespace YahtzeeTDDTest
             //Assert
             Assert.Equal(100, result);
         }
+
+        [Fact]
+        public void Yahtzee_Return0IfNotSameDices()
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            int[] dice = { 4, 4, 5, 4, 4 };
+            //Act
+            int result = pointsCalculator.Yahtzee(dice);
+            //Assert
+            Assert.Equal(0, result);
+        }
     }
 }
