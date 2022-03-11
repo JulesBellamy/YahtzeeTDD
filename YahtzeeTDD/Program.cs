@@ -57,7 +57,17 @@ namespace YahtzeeTDD
 
         public int Yahtzee(int[] dice)
         {
+            var firstDie = dice[0];
+            for (int i = 1; i < dice.Length; ++i)
+                if (dice[i] != firstDie)
+                    return 0;
+
             return 100;
+        }
+
+        public int FullHouse(int[] dice)
+        {
+            throw new NotImplementedException();
         }
     }
     class Program

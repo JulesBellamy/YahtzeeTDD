@@ -79,16 +79,30 @@ namespace YahtzeeTDDTest
             Assert.Equal(100, result);
         }
 
-        [Fact]
-        public void Yahtzee_Return0IfNotSameDices()
+        [Theory]
+        [InlineData(new[] { 1, 2, 2, 2, 2 })]
+        [InlineData(new[] { 2, 2, 2, 2, 1 })]
+        [InlineData(new[] { 2, 2, 1, 2, 2 })]
+        public void Yahtzee_Return0IfNotSameDices(int[] dice)
         {
             //Arrange
             PointsCalculator pointsCalculator = new PointsCalculator();
-            int[] dice = { 4, 4, 5, 4, 4 };
             //Act
             int result = pointsCalculator.Yahtzee(dice);
             //Assert
             Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public void FullHouse_Return25IfPairAndThreeOfAKind()
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            int[] dice = { 5, 5, 5, 2, 2 };
+            //Act
+            int result = pointsCalculator.FullHouse(dice);
+            //Assert
+            Assert.Equal(25, result);
         }
     }
 }
