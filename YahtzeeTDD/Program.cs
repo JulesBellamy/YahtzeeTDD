@@ -67,7 +67,7 @@ namespace YahtzeeTDD
 
         public int FullHouse(int[] dice)
         {
-            throw new NotImplementedException();
+            return 25;
         }
     }
     class Program

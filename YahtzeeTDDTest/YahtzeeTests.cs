@@ -104,5 +104,17 @@ namespace YahtzeeTDDTest
             //Assert
             Assert.Equal(25, result);
         }
+
+        [Fact]
+        public void FullHouse_Return25IfFiveSameDices()
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            int[] dice = { 5, 5, 5, 5, 5 };
+            //Act
+            int result = pointsCalculator.FullHouse(dice);
+            //Assert
+            Assert.Equal(25, result);
+        }
     }
 }
