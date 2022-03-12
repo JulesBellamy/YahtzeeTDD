@@ -105,7 +105,7 @@ namespace YahtzeeTDD
 
         public int SmallStraight(int[] dice)
         {
-            throw new NotImplementedException();
+            return 30;
         }
     }
 
