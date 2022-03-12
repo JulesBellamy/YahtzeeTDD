@@ -67,6 +67,9 @@ namespace YahtzeeTDD
 
         public int FullHouse(int[] dice)
         {
+            if(GetMultipleOfAKind(dice, 3) == 0)
+                return 0;
+
             return 25;
         }
     }
