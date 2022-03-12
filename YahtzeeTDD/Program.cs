@@ -67,12 +67,48 @@ namespace YahtzeeTDD
 
         public int FullHouse(int[] dice)
         {
+            if(Yahtzee(dice) != 0)
+                return 25;
+
             if(GetMultipleOfAKind(dice, 3) == 0)
                 return 0;
 
-            return 25;
+            Array.Sort(dice);
+            int testedDie = dice[0];
+            int firstCombinationCount = 1;
+            int secondCombinationCount = 1;
+            bool testSecondCombination = false;
+            for(int i = 1; i < dice.Length; ++i)
+            {
+                if(dice[i] == testedDie)
+                {
+                    if(!testSecondCombination)
+                        ++firstCombinationCount;
+                    else
+                        ++secondCombinationCount;
+                }
+                else if(!testSecondCombination)
+                {
+                    testedDie = dice[i];
+                    testSecondCombination = true;
+                }
+                else
+                    return 0;
+            }
+
+            if(firstCombinationCount == 3 && secondCombinationCount == 2
+                || firstCombinationCount == 2 && secondCombinationCount == 3)
+                return 25;
+            else
+                return 0;
+        }
+
+        public int SmallStraight(int[] dice)
+        {
+            throw new NotImplementedException();
         }
     }
+
     class Program
     {
         static void Main(string[] args)
