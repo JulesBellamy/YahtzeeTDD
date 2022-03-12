@@ -116,5 +116,17 @@ namespace YahtzeeTDDTest
             //Assert
             Assert.Equal(25, result);
         }
+
+        [Fact]
+        public void FullHouse_Return0IfNoThreeOfAKind()
+        {
+             //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            int[] dice = { 5, 5, 2, 1, 3 };
+            //Act
+            int result = pointsCalculator.FullHouse(dice);
+            //Assert
+            Assert.Equal(0, result);
+        }
     }
 }
