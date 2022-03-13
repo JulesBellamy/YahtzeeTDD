@@ -130,7 +130,7 @@ namespace YahtzeeTDD
 
         public int LargeStraight(int[] dice)
         {
-            throw new NotImplementedException();
+            return 40;
         }
     }
 

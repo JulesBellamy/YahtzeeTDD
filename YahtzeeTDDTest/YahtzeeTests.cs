@@ -166,16 +166,29 @@ namespace YahtzeeTDDTest
             Assert.Equal(0, result);
         }
 
-        [Fact]
-        public void LargeStraight_Return40IfLargeStraight()
+        [Theory]
+        [InlineData(new[] { 2, 4, 5, 1, 3 })]
+        [InlineData(new[] { 6, 3, 4, 2, 5 })]
+        public void LargeStraight_Return40IfLargeStraight(int[] dice)
         {
             //Arrange
             PointsCalculator pointsCalculator = new PointsCalculator();
-            int[] dice = { 1, 4, 2, 5, 3 };
             //Act
             int result = pointsCalculator.LargeStraight(dice);
             //Assert
             Assert.Equal(40, result);
+        }
+
+        [Fact]
+        public void LargeStraight_Return0IfNoLargeStraight()
+        {
+            //Arrange
+            PointsCalculator pointsCalculator = new PointsCalculator();
+            int[] dice = { 1, 5, 2, 6, 3 };
+            //Act
+            int result = pointsCalculator.LargeStraight(dice);
+            //Assert
+            Assert.Equal(0, result);
         }
     }
 }
