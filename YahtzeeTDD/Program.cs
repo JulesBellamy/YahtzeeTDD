@@ -108,7 +108,7 @@ namespace YahtzeeTDD
             Array.Sort(dice);
             int testedDie = dice[0];
             int count = 1;
-            for(int i = 1; i < 4; ++i)
+            for(int i = 1; i <= 4; ++i)
             {
                 var found = Array.Find(dice, d => d == testedDie+1);
                 if(found != 0)
@@ -121,6 +121,9 @@ namespace YahtzeeTDD
                     count = 1;
                     testedDie = dice[i];
                 }
+                if(count == 4)
+                    break;
+
             }
             if(count >= 4)
                 return 30;
@@ -130,7 +133,55 @@ namespace YahtzeeTDD
 
         public int LargeStraight(int[] dice)
         {
-            return 40;
+            Array.Sort(dice);
+            int testedDie = dice[0];
+            int count = 1;
+            for(int i = 1; i <= 4; ++i)
+            {
+                var found = Array.Find(dice, d => d == testedDie+1);
+                if(found != 0)
+                {
+                    testedDie = found;
+                    ++count;
+                }
+                else
+                {
+                    count = 1;
+                    testedDie = dice[i];
+                }
+                if(count == 5)
+                    break;
+
+            }
+            if(count >= 5)
+                return 40;
+
+            return 0;
+        }
+
+        private bool TestStraight(int[] dice, int size)
+        {
+            Array.Sort(dice);
+            int testedDie = dice[0];
+            int count = 1;
+            for(int i = 1; i <= dice.Length; ++i)
+            {
+                var found = Array.Find(dice, d => d == testedDie+1);
+                if(found != 0)
+                {
+                    testedDie = found;
+                    ++count;
+                }
+                else
+                {
+                    count = 1;
+                    testedDie = dice[i];
+                }
+                if(count == size)
+                    return true;
+
+            }
+            return false;
         }
     }
 
