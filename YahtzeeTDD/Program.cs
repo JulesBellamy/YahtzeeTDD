@@ -105,7 +105,32 @@ namespace YahtzeeTDD
 
         public int SmallStraight(int[] dice)
         {
-            return 30;
+            Array.Sort(dice);
+            int testedDie = dice[0];
+            int count = 1;
+            for(int i = 1; i < 4; ++i)
+            {
+                var found = Array.Find(dice, d => d == testedDie+1);
+                if(found != 0)
+                {
+                    testedDie = found;
+                    ++count;
+                }
+                else
+                {
+                    count = 1;
+                    testedDie = dice[i];
+                }
+            }
+            if(count >= 4)
+                return 30;
+
+            return 0;
+        }
+
+        public int LargeStraight(int[] dice)
+        {
+            throw new NotImplementedException();
         }
     }
 
